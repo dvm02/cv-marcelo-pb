@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import photo from "../assets/foto-perfil.jpg";
 import {
   ambitos,
   aptitudes,
@@ -103,7 +102,7 @@ export function App() {
             </ul>
           </div>
           <figure className="retrato">
-            <img src={photo} alt="Retrato de Marcelo Amed Peña Bernal" />
+            <img src={`${import.meta.env.BASE_URL}foto-perfil.jpg`} alt="Retrato de Marcelo Amed Peña Bernal" />
             <figcaption>Cochabamba · {perfil.experiencia} de experiencia</figcaption>
           </figure>
         </section>
