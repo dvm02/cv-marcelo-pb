@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import photo from "../../assets/foto-perfil.jpg";
+import photo from "../assets/foto-perfil.jpg";
 import {
   ambitos,
   aptitudes,
