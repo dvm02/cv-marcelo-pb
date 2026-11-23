@@ -56,19 +56,27 @@ a {
   z-index: 5;
 }
 
+.marco {
+  width: min(1080px, calc(100% - clamp(2rem, 8vw, 8rem)));
+  margin-inline: auto;
+}
+
 .barra {
   position: sticky;
   top: 0;
   z-index: 4;
+  background: rgba(244, 239, 230, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.barra-fila {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.55rem 1.15rem;
   min-height: var(--barra);
-  padding: 0.7rem var(--lado);
-  background: rgba(244, 239, 230, 0.92);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(10px);
+  padding: 0.7rem 0;
 }
 
 .marca {
@@ -106,10 +114,10 @@ a {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.72fr);
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  align-items: start;
-  padding: 2.5rem var(--lado) 3.5rem;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 2rem 3rem;
+  align-items: center;
+  padding: 2.75rem 0 3.25rem;
   animation: subir 0.7s ease both;
 }
 
@@ -148,7 +156,7 @@ h3 {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 4.6vw, 5.2rem);
+  font-size: clamp(2.45rem, 3.4vw, 4rem);
   text-wrap: balance;
 }
 
@@ -218,16 +226,14 @@ h1 {
 
 .retrato {
   margin: 0;
-  min-width: 0;
-  position: relative;
+  width: 280px;
+  justify-self: end;
 }
 
 .retrato img {
   display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  width: 280px;
+  height: 348px;
   object-fit: cover;
   object-position: center 18%;
   border-radius: 1.4rem 1.4rem 0.4rem 1.4rem;
@@ -241,7 +247,7 @@ h1 {
 }
 
 .seccion {
-  padding: 1rem var(--lado) 3.5rem;
+  padding: 0.4rem 0 3.25rem;
 }
 
 .seccion-cabeza {
@@ -340,9 +346,9 @@ h1 {
   align-items: start;
   text-align: left;
   padding: 0.95rem 1rem;
-  border: 1px solid transparent;
+  border: 1px solid var(--line);
   border-radius: 0.9rem;
-  background: transparent;
+  background: rgba(255, 252, 247, 0.55);
   color: inherit;
   cursor: pointer;
 }
@@ -426,7 +432,7 @@ h1 {
 .grupos,
 .estudios {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -474,7 +480,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   gap: 0.8rem 1.5rem;
-  padding: 1.4rem var(--lado) 2.4rem;
+  padding: 1.4rem 0 2.4rem;
   border-top: 1px solid var(--line);
   color: var(--ink-soft);
 }
@@ -507,15 +513,35 @@ h1 {
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
+    justify-items: start;
   }
 
   .retrato {
+    justify-self: start;
+  }
+
+  .retrato,
+  .retrato img {
     order: -1;
-    width: min(100%, 22rem);
+    width: min(100%, 15.5rem);
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
 
   h1 {
-    font-size: clamp(2.35rem, 10vw, 3.6rem);
+    font-size: clamp(2.35rem, 10vw, 3.4rem);
+  }
+
+  .grupos,
+  .estudios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grupos,
+  .estudios {
+    grid-template-columns: 1fr;
   }
 }
 

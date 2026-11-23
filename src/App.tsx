@@ -55,21 +55,23 @@ export function App() {
         Saltar al contenido
       </a>
       <header className="barra">
-        <a className="marca" href="#inicio">
-          Peña Bernal
-        </a>
-        <nav className="menu" aria-label="Secciones">
-          <a href="#contacto">Contacto</a>
-          <a href="#trayectoria">Trayectoria</a>
-          <a href="#aptitudes">Conocimientos</a>
-          <a href="#formacion">Formación</a>
-        </nav>
-        <a className="enlace-perfil" href={perfil.linkedin}>
-          LinkedIn
-        </a>
+        <div className="marco barra-fila">
+          <a className="marca" href="#inicio">
+            Peña Bernal
+          </a>
+          <nav className="menu" aria-label="Secciones">
+            <a href="#contacto">Contacto</a>
+            <a href="#trayectoria">Trayectoria</a>
+            <a href="#aptitudes">Conocimientos</a>
+            <a href="#formacion">Formación</a>
+          </nav>
+          <a className="enlace-perfil" href={perfil.linkedin}>
+            LinkedIn
+          </a>
+        </div>
       </header>
 
-      <main id="contenido">
+      <main className="marco" id="contenido">
         <section className="hero" id="inicio">
           <div className="hero-copia">
             <p className="lugar">{perfil.lugar}</p>
@@ -267,7 +269,7 @@ export function App() {
         </section>
       </main>
 
-      <footer className="pie">
+      <footer className="marco pie">
         <a href={perfil.linkedin}>Ver perfil original</a>
       </footer>
     </>
