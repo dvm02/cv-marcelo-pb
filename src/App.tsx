@@ -55,8 +55,8 @@ export function App() {
       </a>
       <header className="barra">
         <div className="marco barra-fila">
-          <a className="marca" href="#inicio">
-            Peña Bernal
+          <a className="marca" href="#inicio" aria-label="Marcelo Peña Bernal">
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" />
           </a>
           <nav className="menu" aria-label="Secciones">
             <a href="#contacto">Contacto</a>
